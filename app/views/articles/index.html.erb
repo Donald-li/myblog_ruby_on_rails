@@ -20,3 +20,5 @@
   <% end %>
   <%= link_to '新建文章', new_article_path %>
 </table>
+
+<%= select_date Date.today,prefix: :start_date %>
