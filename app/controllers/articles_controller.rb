@@ -44,20 +44,10 @@ class ArticlesController < ApplicationController
     params.require(:article).permit(:title, :text, comments_attributes: [:commenter,:body,:_destroy])
   end
 
-  def download_pdf
-    article = Article.find(article_params)
-    send_data generate_pdf(article),
-              filename: "#{article.title}.pdf",
-              type: "application/pdf"
-  end
-
-  private
-  def generate_pdf(article)
-    Prawn::Document.new do
-      text article.title, align: :center
-      text "标题: #{article.title}"
-      text "内容: #{article.text}"
-    end.render
+  def show_comments
+    # @article = Article.find(params[:id])
+    # render "show_comments"
+    render plain: "It's gonna work!"
   end
 
   private

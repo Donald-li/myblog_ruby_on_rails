@@ -23,16 +23,6 @@
     <%= f.label :text %><br>
     <%= f.text_area :text %>
   </p>
-
-  <%= f.fields_for :comments do |comments_f| %>
-    <%= comments_f.check_box(:_destroy) %>
-    <%= comments_f.label "是否删除此评论？" %>
-    <br>
-    <%= comments_f.text_area :commenter %>
-    <br>
-    <%= comments_f.text_area :body %>
-    <br>
-  <% end %>
   <p>
     <%= f.submit %>
   </p>
