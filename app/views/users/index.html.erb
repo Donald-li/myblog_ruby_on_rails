@@ -1,0 +1,17 @@
+<h1>用户列表</h1>
+
+<ul id="users">
+  <%= render @users %>
+</ul>
+<br>
+<h1>新建用户</h1>
+<br>
+<%= form_with(model: @user) do |f| %>
+  <%= f.label :username %><br>
+  <%= f.text_field :username %>
+  <br>
+  <%= f.label :password %><br>
+  <%= f.password_field :password %>
+  <br>
+  <%= f.submit %>
+<% end %>

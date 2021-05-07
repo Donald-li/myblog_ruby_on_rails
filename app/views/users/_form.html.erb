@@ -1,0 +1,8 @@
+
+<%= form_tag 'http://localhost:3001/users', authenticity_token: 'external_token' do %>
+  <%= text_field_tag(:name) %>
+  <br>
+  <%= text_field_tag(:password) %>
+  <br>
+  <%= submit_tag("创建用户") %>
+<% end %>

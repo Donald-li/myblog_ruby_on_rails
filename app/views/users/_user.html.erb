@@ -1,0 +1,5 @@
+<li><%= user.username %>
+    <%= link_to '删除', user_path(user),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+</li>

@@ -1,15 +1,17 @@
-<%#= form_for @article do |f| %>
-<!--  评论列表：-->
-<!--  <ul>-->
-    <%#= f.fields_for :comments do |comments_form| %>
-<!--      <li>-->
-        <%#= comments_form.check_box :_destroy %>
-        <%#= comments_form.label '标题' %>
-        <%#= comments_form.text_field :commenter %>
-        <%#= comments_form.label '内容' %>
-        <%#= comments_form.text_field :body %>
-
-<!--      </li>-->
-    <%# end %>
-<!--  </ul>-->
-<%# end %>
+<%= form_for @article do |f| %>
+  <h1>评论列表：</h1>
+  <ul>
+    <%= f.fields_for :comments do |comments_form| %>
+      <li>
+        <%= comments_form.check_box :_destroy,checked:true %>
+        <%= comments_form.label '标题' %>
+        <%= comments_form.text_field :commenter %>
+        <%= comments_form.label '内容' %>
+        <%= comments_form.text_field :body %>
+        <%= comments_form.label '发表时间' %>
+        <%= comments_form.text_field :created_at, format: :short %>
+      </li>
+    <% end %>
+    <%= f.submit %>
+  </ul>
+<% end %>
